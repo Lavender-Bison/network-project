@@ -5,7 +5,7 @@ shared_vpc_access = [
       build = {
         subnet = "general-purpose-computation-dev"
         region = "us-central1"
-        user   = "serviceAccount:github-build@example-dev-4c39ae.iam.gserviceaccount.com"
+        user   = "serviceAccount:github-workflow@example-dev-4c39ae.iam.gserviceaccount.com"
       }
       compute = {
         subnet = "general-purpose-computation-dev"
@@ -20,7 +20,7 @@ shared_vpc_access = [
       build = {
         subnet = "general-purpose-computation-qa"
         region = "us-central1"
-        user   = "serviceAccount:github-build@example-qa-212553.iam.gserviceaccount.com"
+        user   = "serviceAccount:github-workflow@example-qa-212553.iam.gserviceaccount.com"
       }
       compute = {
         subnet = "general-purpose-computation-qa"
@@ -35,7 +35,7 @@ shared_vpc_access = [
       build = {
         subnet = "general-purpose-computation-prod"
         region = "us-central1"
-        user   = "serviceAccount:github-build@example-prod-b68227.iam.gserviceaccount.com"
+        user   = "serviceAccount:github-workflow@example-prod-b68227.iam.gserviceaccount.com"
       }
       compute = {
         subnet = "general-purpose-computation-prod"
