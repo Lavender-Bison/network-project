@@ -9,10 +9,26 @@ resource "google_compute_network" "lavender_bison" {
   mtu                     = 1460
 }
 
-resource "google_compute_subnetwork" "general_purpose_computation" {
+resource "google_compute_subnetwork" "general_purpose_computation_dev" {
   project       = var.project_id
-  name          = "general-purpose-computation"
+  name          = "general-purpose-computation-dev"
   ip_cidr_range = "10.0.0.0/16"
+  region        = "us-central1"
+  network       = google_compute_network.lavender_bison.id
+}
+
+resource "google_compute_subnetwork" "general_purpose_computation_qa" {
+  project       = var.project_id
+  name          = "general-purpose-computation-qa"
+  ip_cidr_range = "10.1.0.0/16"
+  region        = "us-central1"
+  network       = google_compute_network.lavender_bison.id
+}
+
+resource "google_compute_subnetwork" "general_purpose_computation_prod" {
+  project       = var.project_id
+  name          = "general-purpose-computation-prod"
+  ip_cidr_range = "10.2.0.0/16"
   region        = "us-central1"
   network       = google_compute_network.lavender_bison.id
 }
@@ -29,6 +45,8 @@ module "shared_vpc_access" {
   depends_on = [
     google_compute_shared_vpc_host_project.host,
     google_compute_network.lavender_bison,
-    google_compute_subnetwork.general_purpose_computation,
+    google_compute_subnetwork.general_purpose_computation_dev,
+    google_compute_subnetwork.general_purpose_computation_qa,
+    google_compute_subnetwork.general_purpose_computation_prod,
   ]
 }
