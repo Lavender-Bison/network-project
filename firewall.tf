@@ -11,7 +11,8 @@ resource "google_compute_firewall" "allow_build_ssh" {
 
   target_tags = ["build-machine-ssh"]
 
-  # Calls from Github Action pipelines should only be able to SSH into the build network.
-  destination_ranges = ["10.10.0.0/16"]
+  # Potential Improvement:
+  # - Create a different subnet for build machines.
+  # - Limit destinations to the CIDR range of the subnet.
 
 }

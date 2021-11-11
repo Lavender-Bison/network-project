@@ -9,14 +9,6 @@ resource "google_compute_network" "lavender_bison" {
   mtu                     = 1460
 }
 
-resource "google_compute_subnetwork" "build" {
-  project       = var.project_id
-  name          = "build"
-  ip_cidr_range = "10.10.0.0/16"
-  region        = "us-central1"
-  network       = google_compute_network.lavender_bison.id
-}
-
 resource "google_compute_subnetwork" "general_purpose_computation_dev" {
   project       = var.project_id
   name          = "general-purpose-computation-dev"
