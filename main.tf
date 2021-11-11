@@ -45,7 +45,6 @@ module "shared_vpc_access" {
   depends_on = [
     google_compute_shared_vpc_host_project.host,
     google_compute_network.lavender_bison,
-    google_compute_subnetwork.build,
     google_compute_subnetwork.general_purpose_computation_dev,
     google_compute_subnetwork.general_purpose_computation_qa,
     google_compute_subnetwork.general_purpose_computation_prod,
