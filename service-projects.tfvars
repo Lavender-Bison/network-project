@@ -10,7 +10,7 @@ shared_vpc_access = [
       compute = {
         subnet = "general-purpose-computation-dev"
         region = "us-central1"
-        user   = "serviceAccount:134926683163-compute@developer.gserviceaccount.com"
+        user   = "serviceAccount:134926683163@cloudservices.gserviceaccount.com"
       }
     }
   },
@@ -25,7 +25,7 @@ shared_vpc_access = [
       compute = {
         subnet = "general-purpose-computation-qa"
         region = "us-central1"
-        user   = "serviceAccount:637868582072-compute@developer.gserviceaccount.com"
+        user   = "serviceAccount:637868582072@cloudservices.gserviceaccount.com"
       }
     }
   },
@@ -40,7 +40,7 @@ shared_vpc_access = [
       compute = {
         subnet = "general-purpose-computation-prod"
         region = "us-central1"
-        user   = "serviceAccount:946152399515-compute@developer.gserviceaccount.com"
+        user   = "serviceAccount:946152399515@cloudservices.gserviceaccount.com"
       }
     }
   }
