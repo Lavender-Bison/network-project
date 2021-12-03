@@ -1,5 +1,5 @@
-resource "google_compute_firewall" "allow_build_ssh" {
-  name    = "allow-build-ssh"
+resource "google_compute_firewall" "allow_ssh" {
+  name    = "allow-ssh"
   network = google_compute_network.lavender_bison.name
 
   allow {
@@ -9,7 +9,7 @@ resource "google_compute_firewall" "allow_build_ssh" {
 
   source_ranges = ["0.0.0.0/0"]
 
-  target_tags = ["build-machine-ssh"]
+  target_tags = ["build-machine-ssh", "ansible-ssh"]
 
   # Potential Improvement:
   # - Create a different subnet for build machines.
